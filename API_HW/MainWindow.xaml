@@ -1,12 +1,44 @@
-﻿<Window x:Class="API_HW.MainWindow"
+﻿<Window x:Class="SearchApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:API_HW"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Search App" Height="600" Width="800">
     <Grid>
+        <TabControl>
+            <!-- Завдання 1: Пошук інформації в Google -->
+            <TabItem Header="Google Search">
+                <StackPanel>
+                    <TextBox Name="SearchTextBox" Width="300" Margin="10" Text="Enter search term" Foreground="Gray"/>
+                    <Button Name="SearchButton" Content="Search Google" Click="SearchButton_Click" Margin="10"/>
+                    <ListBox Name="SearchResultsListBox" Margin="10" Height="400"/>
+                </StackPanel>
+            </TabItem>
 
+            <!-- Завдання 2: Пошук в кількох системах одночасно (поки що лише Google) -->
+            <TabItem Header="Multi-Search">
+                <StackPanel>
+                    <TextBox Name="MultiSearchTextBox" Width="300" Margin="10" Text="Enter search term" Foreground="Gray"/>
+                    <Button Name="MultiSearchButton" Content="Search" Click="MultiSearchButton_Click" Margin="10"/>
+                    <ListBox Name="MultiSearchResultsListBox" Margin="10" Height="400"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Завдання 3: Пошук зображень в Google -->
+            <TabItem Header="Image Search">
+                <StackPanel>
+                    <TextBox Name="ImageSearchTextBox" Width="300" Margin="10" Text="Enter image search term" Foreground="Gray"/>
+                    <Button Name="ImageSearchButton" Content="Search Images" Click="ImageSearchButton_Click" Margin="10"/>
+                    <ListBox Name="ImageResultsListBox" Margin="10" Height="400"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Завдання 4: Пошук зображень в кількох системах одночасно (поки що лише Google) -->
+            <TabItem Header="Multi-Image Search">
+                <StackPanel>
+                    <TextBox Name="MultiImageSearchTextBox" Width="300" Margin="10" Text="Enter image search term" Foreground="Gray"/>
+                    <Button Name="MultiImageSearchButton" Content="Search Images" Click="MultiImageSearchButton_Click" Margin="10"/>
+                    <ListBox Name="MultiImageSearchResultsListBox" Margin="10" Height="400"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
