@@ -1,12 +1,47 @@
-﻿<Window x:Class="API_HW.MainWindow"
+﻿<Window x:Class="GutenbergApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:API_HW"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Gutenberg App" Height="600" Width="800">
     <Grid>
+        <TabControl>
+            <!-- Завдання 1: Завантаження Гамлета -->
+            <TabItem Header="Download Hamlet">
+                <StackPanel>
+                    <Button Name="DownloadHamletButton" Content="Download Hamlet" Click="DownloadHamlet_Click" Margin="10"/>
+                    <TextBox Name="HamletTextBox" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Margin="10" Height="400"/>
+                </StackPanel>
+            </TabItem>
 
+            <!-- Завдання 2 і 4: Топ-100 книг та обкладинки -->
+            <TabItem Header="Top 100 Books">
+                <StackPanel>
+                    <Button Name="LoadTop100Button" Content="Load Top 100 Books" Click="LoadTop100Books_Click" Margin="10"/>
+                    <ListBox Name="BooksListBox" SelectionChanged="BooksListBox_SelectionChanged" Margin="10" Height="200"/>
+                    <TextBlock Name="SelectedBookTextBlock" TextWrapping="Wrap" Margin="10"/>
+                    <Image Name="BookCoverImage" Height="300" Margin="10"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Завдання 3: Пошук книг -->
+            <TabItem Header="Search Books">
+                <StackPanel>
+                    <TextBox Name="SearchTextBox" Width="300" Margin="10" Text="Enter search term"
+                             Foreground="Gray" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+                    <Button Name="SearchButton" Content="Search Books" Click="SearchBooks_Click" Margin="10"/>
+                    <ListBox Name="SearchResultsListBox" SelectionChanged="SearchResultsListBox_SelectionChanged" Margin="10" Height="200"/>
+                    <TextBlock Name="SearchSelectedBookTextBlock" TextWrapping="Wrap" Margin="10"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Завдання 5: Завантаження книг автора -->
+            <TabItem Header="Download Author's Books">
+                <StackPanel>
+                    <TextBox Name="AuthorTextBox" Width="300" Margin="10" Text="Enter author name"
+                             Foreground="Gray" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+                    <Button Name="DownloadAuthorButton" Content="Download Books by Author" Click="DownloadAuthorBooks_Click" Margin="10"/>
+                    <TextBlock Name="DownloadStatusTextBlock" TextWrapping="Wrap" Margin="10"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
